@@ -16,15 +16,15 @@ def save_file(data, fname, dname):
     if not os.path.exists(dname):
         os.mkdir(dname)
         print(f'Directory {dname} was created.')
-        
+
     fpath = os.path.join(dname, fname)
-    
-    
+
+
     if os.path.exists(fpath):
         print("A file already exists with this name.\n")
 
         yesno = None
-        while yesno != "Y" and yesno != "N":
+        while yesno not in ["Y", "N"]:
             yesno = input('Do you want to overwrite? (Y/N)').strip()[0].capitalize()
             if yesno == "Y":
                 print(f'Writing file.  "{fpath}"')
